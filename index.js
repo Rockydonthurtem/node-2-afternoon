@@ -14,3 +14,9 @@ massive(process.env.CONNECTION_STRINGpostgres).then(dbInstance => {
 
 const port = (3000);
 app.listen(port, (e) => { console.log(`Listening on port ${port}.`); })
+
+app.post('./api/product', products_controller.create)
+app.get('./api/products', product_controller.getAll)
+app.get('./api/products/id', product_controller.getOne)
+app.put('./api/products/id', product_controller.Update)
+app.delete('./api/products/id', product_controller.delete)
